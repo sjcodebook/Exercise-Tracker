@@ -9,7 +9,10 @@ const port = process.env.PORT || 5000;
 
 app.use(function(req, res, next) {
   // Website you wish to allow to connect
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+  res.setHeader(
+    'Access-Control-Allow-Origin',
+    'https://calm-bastion-67573.herokuapp.com'
+  );
 
   // Request methods you wish to allow
   res.setHeader(
