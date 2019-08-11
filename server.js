@@ -11,7 +11,7 @@ app.use(function(req, res, next) {
   // Website you wish to allow to connect
   res.setHeader(
     'Access-Control-Allow-Origin',
-    'https://calm-bastion-67573.herokuapp.com'
+    'https://exercise-tracker-mern.herokuapp.com/'
   );
 
   // Request methods you wish to allow
