@@ -17,7 +17,10 @@ export default class EditExercise extends Component {
 
   componentDidMount() {
     axios
-      .get('http://localhost:5000/exercises/' + this.props.match.params.id)
+      .get(
+        'https://exercise-tracker-mern.herokuapp.com/exercises/' +
+          this.props.match.params.id
+      )
       .then(response => {
         this.setState({
           username: response.data.username,
@@ -69,7 +72,8 @@ export default class EditExercise extends Component {
 
     axios
       .put(
-        'http://localhost:5000/exercises/update/' + this.props.match.params.id,
+        'https://exercise-tracker-mern.herokuapp.com/exercises/update/' +
+          this.props.match.params.id,
         exercise
       )
       .then(res => console.log(res.data));

@@ -17,14 +17,16 @@ export class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:5000/users/').then(response => {
-      if (response.data.length > 0) {
-        this.setState({
-          users: response.data.map(user => user.username),
-          username: response.data[0].username
-        });
-      }
-    });
+    axios
+      .get('https://exercise-tracker-mern.herokuapp.com/users/')
+      .then(response => {
+        if (response.data.length > 0) {
+          this.setState({
+            users: response.data.map(user => user.username),
+            username: response.data[0].username
+          });
+        }
+      });
   }
 
   onChangeUsername = e => {
@@ -64,7 +66,10 @@ export class CreateExercise extends Component {
     console.log(exercise);
 
     axios
-      .post('http://localhost:5000/exercises/add', exercise)
+      .post(
+        'https://exercise-tracker-mern.herokuapp.com/exercises/add',
+        exercise
+      )
       .then(res => console.log(res.data));
 
     window.location = '/';
